@@ -56,7 +56,7 @@ spec = Hoe.spec "mime-types" do
 
   license "MIT"
 
-  extra_deps << ["mime-types-data", "~> 3.2015"]
+  extra_deps << ['mime-types-data', '>= 3.2018', '< 4']
 
   extra_dev_deps << ["hoe-doofus", "~> 1.0"]
   extra_dev_deps << ["hoe-gemspec2", "~> 1.1"]

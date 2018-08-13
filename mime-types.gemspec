@@ -13,7 +13,7 @@ Gem::Specification.new do |s|
   s.description = "The mime-types library provides a library and registry for information about\nMIME content type definitions. It can be used to determine defined filename\nextensions for MIME types, or to use filename extensions to look up the likely\nMIME type definitions.\n\nVersion 3.0 is a major release that requires Ruby 2.0 compatibility and removes\ndeprecated functions. The columnar registry format introduced in 2.6 has been\nmade the primary format; the registry data has been extracted from this library\nand put into {mime-types-data}[https://github.com/mime-types/mime-types-data].\nAdditionally, mime-types is now licensed exclusively under the MIT licence and\nthere is a code of conduct in effect. There are a number of other smaller\nchanges described in the History file.".freeze
   s.email = ["halostatue@gmail.com".freeze]
   s.extra_rdoc_files = ["Code-of-Conduct.md".freeze, "Contributing.md".freeze, "History.md".freeze, "Licence.md".freeze, "Manifest.txt".freeze, "README.rdoc".freeze]
-  s.files = ["Code-of-Conduct.md".freeze, "Contributing.md".freeze, "History.md".freeze, "Licence.md".freeze, "Manifest.txt".freeze, "README.rdoc".freeze, "Rakefile".freeze, "lib/mime-types.rb".freeze, "lib/mime/type.rb".freeze, "lib/mime/type/columnar.rb".freeze, "lib/mime/types.rb".freeze, "lib/mime/types/_columnar.rb".freeze, "lib/mime/types/cache.rb".freeze, "lib/mime/types/columnar.rb".freeze, "lib/mime/types/container.rb".freeze, "lib/mime/types/deprecations.rb".freeze, "lib/mime/types/full.rb".freeze, "lib/mime/types/loader.rb".freeze, "lib/mime/types/logger.rb".freeze, "lib/mime/types/registry.rb".freeze, "test/bad-fixtures/malformed".freeze, "test/fixture/json.json".freeze, "test/fixture/old-data".freeze, "test/fixture/yaml.yaml".freeze, "test/minitest_helper.rb".freeze, "test/test_mime_type.rb".freeze, "test/test_mime_types.rb".freeze, "test/test_mime_types_cache.rb".freeze, "test/test_mime_types_class.rb".freeze, "test/test_mime_types_lazy.rb".freeze, "test/test_mime_types_loader.rb".freeze]
+  s.files = ["Code-of-Conduct.md".freeze, "Contributing.md".freeze, "History.md".freeze, "Licence.md".freeze, "Manifest.txt".freeze, "README.rdoc".freeze, "Rakefile".freeze, "lib/mime-types.rb".freeze, "lib/mime/type.rb".freeze, "lib/mime/type/columnar.rb".freeze, "lib/mime/type/value_pool.rb".freeze, "lib/mime/types.rb".freeze, "lib/mime/types/_columnar.rb".freeze, "lib/mime/types/cache.rb".freeze, "lib/mime/types/columnar.rb".freeze, "lib/mime/types/container.rb".freeze, "lib/mime/types/deprecations.rb".freeze, "lib/mime/types/full.rb".freeze, "lib/mime/types/loader.rb".freeze, "lib/mime/types/logger.rb".freeze, "lib/mime/types/registry.rb".freeze, "test/bad-fixtures/malformed".freeze, "test/fixture/json.json".freeze, "test/fixture/yaml.yaml".freeze, "test/minitest_helper.rb".freeze, "test/test_mime_type.rb".freeze, "test/test_mime_types.rb".freeze, "test/test_mime_types_cache.rb".freeze, "test/test_mime_types_class.rb".freeze, "test/test_mime_types_lazy.rb".freeze, "test/test_mime_types_loader.rb".freeze]
   s.homepage = "https://github.com/mime-types/ruby-mime-types/".freeze
   s.licenses = ["MIT".freeze]
   s.rdoc_options = ["--main".freeze, "README.rdoc".freeze]
@@ -42,8 +42,8 @@ Gem::Specification.new do |s|
     s.add_development_dependency(%q<rdoc>.freeze, [">= 4.0", "< 7"])
     s.add_development_dependency(%q<hoe>.freeze, ["~> 3.23"])
   else
-    s.add_dependency(%q<mime-types-data>.freeze, ["~> 3.2015"])
-    s.add_dependency(%q<minitest>.freeze, ["~> 5.14"])
+    s.add_dependency(%q<mime-types-data>.freeze, ["< 4", ">= 3.2018"])
+    s.add_dependency(%q<minitest>.freeze, ["~> 5.13"])
     s.add_dependency(%q<hoe-doofus>.freeze, ["~> 1.0"])
     s.add_dependency(%q<hoe-gemspec2>.freeze, ["~> 1.1"])
     s.add_dependency(%q<hoe-git>.freeze, ["~> 1.6"])
