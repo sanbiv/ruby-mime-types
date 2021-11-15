@@ -2,7 +2,7 @@
 
 MIME::Type::ValuePool = Hash.new { |h, k|
   k =
-    if k.kind_of?(String)
+    if k.is_a?(String)
       MIME::Type::ValuePool.intern_string(k)
     else
       begin

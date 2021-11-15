@@ -324,7 +324,7 @@ class MIME::Type
   def add_extensions(*extensions)
     extensions = Array(extensions).flatten.compact
     if @extensions.frozen?
-      @extensions = @extensions | extensions
+      @extensions |= extensions
     else
       @extensions.merge(extensions)
     end
@@ -693,5 +693,4 @@ class MIME::Type
   end
 end
 
-require_relative 'type/value_pool'
-
+require_relative "type/value_pool"
